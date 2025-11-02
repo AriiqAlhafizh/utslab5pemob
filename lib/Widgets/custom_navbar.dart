@@ -15,10 +15,10 @@ class CustomNavbar extends StatelessWidget {
             clipBehavior: Clip.none,
             children:[
               Image.asset(
-                'assets/images/NavbarKayu.png',
+                'assets/images/PapanKayuShort.png',
                 width: screenWidth,
                 height: 100,
-                fit: BoxFit.cover,
+                fit: BoxFit.none,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -33,8 +33,8 @@ class CustomNavbar extends StatelessWidget {
                         children: [
                           Image.asset(
                             'assets/images/kertasKecil.png',
-                            width: 100,
-                            height: 100,
+                            width: 130,
+                            height: 130,
                             fit: BoxFit.fill,
                           ),
                         ]
@@ -49,8 +49,8 @@ class CustomNavbar extends StatelessWidget {
                         children: [
                           Image.asset(
                             'assets/images/kertasKecil.png',
-                            width: 100,
-                            height: 100,
+                            width: 130,
+                            height: 130,
                             fit: BoxFit.fill,
                           ),
                         ]
