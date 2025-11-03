@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:utslab5pemob/Widgets/custom_navbar.dart';
 
 
 class ProfileScreen extends StatefulWidget {
@@ -87,9 +86,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
             ),
-            Expanded(
-              flex: 3,
-              child: CustomNavbar(),
+            const Expanded(
+              flex: 2,
+              child: SizedBox.shrink(),
             ),
           ],
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:utslab5pemob/Screen/home_screen.dart';
-import 'package:utslab5pemob/Screen/profile_screen.dart';
+import 'package:utslab5pemob/Config/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const ProfileScreen(),
+    return MaterialApp.router( // Ganti MaterialApp dengan MaterialApp.router
+        title: 'Quiz App Baru',
+
+        // Kunci utama: Tunjuk ke konfigurasi router yang telah dibuat
+        routerConfig: createRouter(),
     );
   }
 }

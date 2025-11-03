@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:utslab5pemob/Widgets/custom_navbar.dart';
 
-
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffe8b882),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/HomeBG.png'),
             fit: BoxFit.cover,
@@ -22,54 +16,47 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               flex: 2,
               child: SizedBox.shrink(),
             ),
             Expanded(
               flex: 8,
               child: Container(
-                margin: EdgeInsets.only(right: 20.0, bottom: 30.0) ,
-                alignment: AlignmentGeometry.bottomRight,
-                // decoration: BoxDecoration(
-                //   color: Colors.red,
-                // ),
-                child:
-                    Container(
+                margin: const EdgeInsets.only(right: 20.0, bottom: 30.0),
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  alignment: Alignment.bottomCenter,
+                  width: 200,
+                  height: 150,
+                  child: InkWell(
+                    onTap: () {
+                      print('tombol Play ditekan');
+                      //TODO: Ganti ini dengan navigasi ke QuizScreen
+                    },
+                    child: Stack(
                       alignment: Alignment.bottomCenter,
-                      width: 200,
-                      height: 150,
-                      // decoration: BoxDecoration(
-                      //   color: Colors.blue,
-                      // ),
-                      child: InkWell(
-                        onTap: () {
-                          print('tombol Play');
-                        },
-                        child: Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: [
-                            Image.asset(
-                              'assets/images/playButton.png',
-                              width: 200,
-                              height: 150,
-                              fit: BoxFit.contain,
-                            ),
-                            Text('Play'),
-                          ],
+                      children: [
+                        Image.asset(
+                          'assets/images/playButton.png',
+                          width: 200,
+                          height: 150,
+                          fit: BoxFit.contain,
                         ),
-                      ),
-                    )
+                        const Text('Play', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
-            Expanded(
+            const Expanded(
               flex: 2,
-              child: CustomNavbar(),
+              child: SizedBox.shrink(),
             ),
           ],
         ),
       ),
-      backgroundColor: Color(0xffe8b882),
     );
   }
 }
