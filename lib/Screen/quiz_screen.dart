@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:utslab5pemob/Widgets/answer_bar.dart';
 
+import '../Models/quiz.dart';
+import '../Data/quiz_dummy_data.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -9,8 +12,47 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+
+
+  int _currentQuestionIndex = 0;
+  int _score = 0;
+  bool _quizFinished = false;
+
+  Quiz get currentQuiz => quizList[_currentQuestionIndex];
+
+  void _answerQuestion(int selectedIndex) {
+    if (_quizFinished) {
+      _saveHighscore(_score);
+      return;
+    }
+
+    bool isCorrect = selectedIndex == currentQuiz.correctAnswerIndex;
+    if (isCorrect) {
+      _score++;
+      print('Jawaban Benar');
+    } else {
+      _quizFinished = true;
+      print('Jawaban slah');
+    }
+    setState(() {
+      if (_currentQuestionIndex < quizList.length - 1) {
+        _currentQuestionIndex++;
+      } else {
+        _quizFinished = true;
+      }
+    });
+  }
+
+  void _saveHighscore(int score) async {
+
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_quizFinished) {
+      return const Center(child: Text('Kuis Selesai!'));
+    }
+
     return Scaffold(
       body: Column(
           children: [
@@ -38,7 +80,10 @@ class _QuizScreenState extends State<QuizScreen> {
                           fit: BoxFit.fill,
                         ),
                       ),
-                      child: Text('berapa IQ Bintang?'),
+                      child: Text(
+                        currentQuiz.questionText,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                 ),
               ),
@@ -57,64 +102,28 @@ class _QuizScreenState extends State<QuizScreen> {
                 child: Column(
                   children: [
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: AlignmentGeometry.center,
-                        width: 400,
-                        height: 75,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/kertasPipihPol.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Text('2 juta'),
-                      ),
+                      onTap: () {
+                        _answerQuestion(0);
+                      },
+                      child: AnswerBar(answerOptionText: currentQuiz.options[0],),
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: AlignmentGeometry.center,
-                        width: 400,
-                        height: 75,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/kertasPipihPol.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Text('- 2 juta'),
-                      ),
+                      onTap: () {
+                        _answerQuestion(1);
+                      },
+                      child: AnswerBar(answerOptionText: currentQuiz.options[1],),
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: AlignmentGeometry.center,
-                        width: 400,
-                        height: 75,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/kertasPipihPol.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Text('100'),
-                      ),
+                      onTap: () {
+                        _answerQuestion(2);
+                      },
+                      child: AnswerBar(answerOptionText: currentQuiz.options[2],),
                     ),
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: AlignmentGeometry.center,
-                        width: 400,
-                        height: 75,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/kertasPipihPol.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Text('0'),
-                      ),
+                      onTap: () {
+                        _answerQuestion(3);
+                      },
+                      child: AnswerBar(answerOptionText: currentQuiz.options[3],),
                     ),
                   ],
                 ),
