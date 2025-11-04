@@ -3,12 +3,14 @@ import 'package:go_router/go_router.dart';
 
 import 'package:utslab5pemob/Screen/home_screen.dart';
 import 'package:utslab5pemob/Screen/profile_screen.dart';
+import 'package:utslab5pemob/Screen/quiz_screen.dart';
 
 import '../Widgets/custom_shell.dart';
 
 class AppRoutes {
   static const String home = '/home';
   static const String profile = '/profile';
+  static const String quiz = '/quiz';
 }
 
 GoRouter createRouter() {
@@ -18,7 +20,11 @@ GoRouter createRouter() {
     navigatorKey: rootNavigatorKey,
     initialLocation: AppRoutes.home,
     routes: [
-
+      GoRoute(
+        path: AppRoutes.quiz,
+        name: 'sign-in',
+        builder: (context, state) => const QuizScreen(),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, child) {
           return CustomShell(child: child);
