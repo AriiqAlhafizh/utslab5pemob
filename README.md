@@ -1,16 +1,20 @@
 # utslab5pemob
 
-aplikasi quiz pilihan ganda sebagai tugas UTS lab pemograman mobile
+Nama: Muhammad Ariiq Alhafizh
 
-## Getting Started
+Nim: 231401054
 
-This project is a starting point for a Flutter application.
+Lab: 5
 
-A few resources to get you started if this is your first Flutter project:
+Nama Aplikasi: Tomath_jr
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Deskripsi Aplikasi: aplikasi quiz pilihan ganda matematika sederhana
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+credit: 
+
+  Font: Google Fonts
+  
+  images: buat sendiri
+  
+
+
