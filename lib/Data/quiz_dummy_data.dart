@@ -22,7 +22,7 @@ const List<Quiz> quizList = [
     options: ['32', '48', '24', '12'],
     correctAnswerIndex: 0,
   ),Quiz(
-    questionText: "9 + 8?",
+    questionText: "9 x 8?",
     options: ['64', '72', '56', '81'],
     correctAnswerIndex: 1,
   ),Quiz(

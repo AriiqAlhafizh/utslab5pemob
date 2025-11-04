@@ -44,7 +44,12 @@ class HomeScreen extends StatelessWidget {
                           height: 150,
                           fit: BoxFit.contain,
                         ),
-                        const Text('Play', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                        Text('Play', style: TextStyle(
+                          fontFamily: 'LuckiestGuy',
+                          fontSize: 30,
+                          color: Colors.white,
+                          ),
+                        ),
                       ],
                     ),
                   ),

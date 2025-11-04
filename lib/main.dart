@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:utslab5pemob/Config/routes.dart';
+import 'package:provider/provider.dart';
+import '../Provider/app_state_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AppStateProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

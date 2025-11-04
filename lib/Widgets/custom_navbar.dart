@@ -34,6 +34,7 @@ class CustomNavbar extends StatelessWidget {
                 index: 0,
                 path: '/home',
                 iconPath: 'assets/images/kertasKecil.png',
+                buttonText: 'Home',
               ),
 
               _buildNavItem(
@@ -41,6 +42,7 @@ class CustomNavbar extends StatelessWidget {
                 index: 1,
                 path: '/profile',
                 iconPath: 'assets/images/kertasKecil.png',
+                buttonText: 'Profile',
               ),
             ],
           ),
@@ -50,7 +52,7 @@ class CustomNavbar extends StatelessWidget {
   }
 
 
-  Widget _buildNavItem(BuildContext context, {required int index, required String path, required String iconPath}) {
+  Widget _buildNavItem(BuildContext context, {required int index, required String path, required String iconPath, required String buttonText}) {
     final isActive = _isTabActive(index);
     final width = _getButtonWidth(index);
 
@@ -69,6 +71,11 @@ class CustomNavbar extends StatelessWidget {
                 width: width,
                 height: width,
                 fit: BoxFit.fill,
+              ),
+              Text(buttonText,
+                style: TextStyle(
+                  fontFamily: 'LuckiestGuy',
+                ),
               ),
             ]
         ),

@@ -24,7 +24,7 @@ class _AnswerBarState extends State<AnswerBar> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Text(widget.answerOptionText),
+          child: Text(widget.answerOptionText, style: TextStyle(fontFamily: 'BaskervvilleSC', fontSize: 25,),),
     );
   }
 }
